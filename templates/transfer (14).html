@@ -1,0 +1,692 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<title>Intrust Capitals - Online Banking Bank</title>
+		
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+		
+		<!-- Common CSS -->
+		<link rel="stylesheet" href="{% static 'bootstrap.min.css' %}" />
+		<link rel="stylesheet" href="{% static 'icomoon.css' %}" />
+		<link rel="stylesheet" href="{% static 'main.css' %}" />
+
+		<!-- Other CSS includes plugins - Cleanedup unnecessary CSS -->
+		<!-- Chartist css -->
+		<link href="{% static 'chartist.min.css' %}" rel="stylesheet" />
+        <link href="{% static 'chartist-custom.css' %}" rel="stylesheet" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+		<style type="text/css">
+			.header-actions > li > a.user-settings img.avatar {
+			    max-width: 40px;
+			    max-height: 40px;
+			    -webkit-border-radius: 20px;
+			    -moz-border-radius: 20px;
+			    border-radius: 20px;
+			}
+		</style>
+                
+                    <style>
+                .app-side {
+                    background: #002D72;
+                }
+                .side-content .user-profile {
+                    background: #ffbf3f;
+                    color: #fff;
+                }
+                .side-nav .unifyMenu a {
+                    background: #01327c;
+                    color: #a7b4c5;
+                }
+                .side-nav .unifyMenu > li.selected > a {
+                    color: #ffffff;
+                    background: #ffbf3f;
+                }
+                .app-header {
+                    background: #002D72;
+                }
+                .side-nav .unifyMenu > li {
+                    background: #01327c;
+                }
+                #yt-widget .yt-servicelink {
+                    display: none !important;
+                }
+                .side-nav .unifyMenu a {
+                    color: #ffffff;
+                }
+                .btn-primary {
+                    background-color: #ffbf3f;
+                    border-color: #ffbf3f;
+                    color: #ffffff;
+                }
+                .nav-pills .nav-link.active, .show>.nav-pills .nav-link {
+                    background-color: #ffbf3f;
+                }
+                .nav-link.active:after {
+                    background: #ffbf3f;
+                }
+            </style>
+              
+
+	</head>
+	<body>
+		<!-- Loading starts -->
+
+		<!-- Loading ends -->
+
+		<!-- BEGIN .app-wrap -->
+		<div class="app-wrap">
+			<!-- BEGIN .app-heading -->
+			<header class="app-header">
+
+				<div class="container-fluid">
+					<div class="row ">
+						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-8 col-8">
+							<div class="logo-block">
+								<a href="https://intrustcapitals.com/secure/index" class="logo">
+                                    <img src="/secure/logo/logo.png" alt="" class="main-logo">
+                                    
+								</a>
+								<a class="mini-nav-btn" href="#" id="app-side-mini-toggler">
+									<i class="icon-th-menu"></i>
+								</a>
+								<a href="#app-side" data-toggle="onoffcanvas" class="onoffcanvas-toggler" aria-expanded="true">
+									<i class="icon-th-menu"></i>
+								</a>
+							</div>
+						</div>
+						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-4 col-4">
+							<ul class="header-actions">
+								<li class="dropdown">
+									<a href="#" id="userSettings" class="user-settings" data-toggle="dropdown" aria-haspopup="true">
+										<span class="user-name text-truncate">Morgan Boudreau</span>
+                                                                                
+										<img class="avatar" style="" src="https://intrustcapitals.com/storage/picture/P9F6Hgn8U3Mj5hoEKfZLDzPD02JNEJ390so08hFA.jpg" alt="User Thumb">
+																				<i class="icon-chevron-small-down"></i>
+									</a>
+									<div class="dropdown-menu lg dropdown-menu-right" aria-labelledby="userSettings">
+										<ul class="user-settings-list">
+											<li>
+												<a href="https://intrustcapitals.com/secure/account">
+													<div class="icon">
+														<i class="icon-account_circle"></i>
+													</div>
+													<p>Account</p>
+												</a>
+											</li>
+											<li>
+												<a href="https://intrustcapitals.com/secure/card/application">
+													<div class="icon red">
+														<i class="icon-credit-card"></i>
+													</div>
+													<p>Manage Card</p>
+												</a>
+											</li>
+											<li>
+												<a href="https://intrustcapitals.com/secure/transactions">
+													<div class="icon yellow">
+														<i class="icon-schedule"></i>
+													</div>
+													<p>Transactions</p>
+												</a>
+											</li>
+										</ul>
+										<div class="logout-btn">
+											<a href="https://intrustcapitals.com/logout"
+	                               				onclick="event.preventDefault();
+	                                            document.getElementById('logout-form').submit();"
+	                                            class="btn btn-primary">Logout
+	                                        </a>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</header>
+			<!-- END: .app-heading -->
+			<!-- BEGIN .app-container -->
+			<div class="app-container">
+				<!-- BEGIN .app-side -->
+				<aside class="app-side fixed" id="app-side">
+					<!-- BEGIN .side-content -->
+					<div class="side-content ">
+						<!-- BEGIN .user-profile -->
+						<div class="user-profile">
+														    <img src="https://intrustcapitals.com/storage/picture/P9F6Hgn8U3Mj5hoEKfZLDzPD02JNEJ390so08hFA.jpg" class="profile-thumb" alt="User Thumb">
+							                            <h6 class="profile-name">Morgan Boudreau</h6>
+							                                <span class="user-name text-truncate">
+                                    <small>
+                                        <strong>
+                                            72126906007
+                                        </strong>
+                                    </small>
+                                </span>
+								<br />
+                                <span class="user-name text-truncate">
+                                    <small>
+                                        <strong>
+                                            $ 436,000.00
+                                        </strong>
+                                    </small>
+                                </span>
+                            							<ul class="profile-actions">
+								<li>
+									<a href="https://intrustcapitals.com/secure/account">
+										<i class="icon-account_circle"></i>
+									</a>
+								</li>
+								<li>
+									<a href="https://intrustcapitals.com/logout"
+	                               				onclick="event.preventDefault();
+	                                            document.getElementById('logout-form').submit();">
+										<i class="icon-export" style="color: rgb(255, 60, 0)"></i>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<!-- END .user-profile -->
+						<!-- BEGIN .side-nav -->
+						<div class="sidebarNavScroll">
+							<nav class="side-nav">
+								<!-- BEGIN: side-nav-content -->
+								<ul class="unifyMenu" id="unifyMenu">
+									<li class="">
+										<a href="https://intrustcapitals.com/secure/index">
+											<span class="has-icon">
+												<i class="icon-home"></i>
+											</span>
+											<span class="nav-title">Home</span>
+										</a>
+									</li>
+									<li class="selected">
+										<a href="https://intrustcapitals.com/secure/transfer">
+											<span class="has-icon">
+												<i class="icon-swap"></i>
+											</span>
+											<span class="nav-title">Transfer</span>
+										</a>
+									</li>
+									<li class="">
+										<a href="https://intrustcapitals.com/secure/cards">
+											<span class="has-icon">
+												<i class="icon-credit-card"></i>
+											</span>
+											<span class="nav-title">Manage Card</span>
+										</a>
+									</li>
+									<li class="">
+										<a href="https://intrustcapitals.com/secure/loan">
+											<span class="has-icon">
+												<i class="fa fa-money"></i>
+											</span>
+											<span class="nav-title">Loan Application</span>
+										</a>
+									</li>
+									<li class="">
+										<a href="https://intrustcapitals.com/secure/transactions">
+											<span class="has-icon">
+												<i class="icon-watch_later"></i>
+											</span>
+											<span class="nav-title">Transactions</span>
+										</a>
+									</li>
+									<li class="">
+										<a href="https://intrustcapitals.com/secure/account">
+											<span class="has-icon">
+												<i class="icon-user3"></i>
+											</span>
+											<span class="nav-title">Account</span>
+										</a>
+                                    </li>
+                                    <li>
+                                        
+                                    </li>
+
+								</ul>
+								<!-- END: side-nav-content -->
+							</nav>
+						</div>
+						<!-- END: .side-nav -->
+					</div>
+					<!-- END: .side-content -->
+				</aside>
+				<!-- END: .app-side -->
+
+				
+				<!-- BEGIN .app-main -->
+				<div class="app-main">
+					<!-- BEGIN .main-heading -->
+					<header class="main-heading">
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+									<div class="page-icon">
+										<i class="icon-swap"></i>
+									</div>
+									<div class="page-title">
+										<h5>Make Transfer</h5>
+										<h6 class="sub-heading"><strong>Morgan Ava Boudreau </strong></h6>
+									</div>
+								</div>
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+									<!-- Live updates start -->
+																		<ul class="updates" id="updates">
+										<li>
+											<a href="javascript:void(0)">
+												<i class="icon-drafts"></i>
+												<span>Your Current Balance Is $ 436,000.00</span>
+											</a>
+                                        </li>
+                                                                                										<li>
+											<a href="javascript:void(0)">
+												<i class="icon-drafts"></i>
+												<span>Your Last Account Debit Was $ 10,000.00</span>
+											</a>
+										</li>
+                                                                                    
+										<li>
+											<a href="javascript:void(0)">
+												<i class="icon-drafts"></i>
+												<span>Your Last Account Credit Was $ 1,000.00</span>
+											</a>
+										</li>
+                                        									</ul>
+									<!-- Live updates end -->								</div>
+							</div>
+						</div>
+					</header>
+					<!-- END: .main-heading -->
+					<!-- BEGIN .main-content -->
+					<div class="main-content">
+                        <div class="">
+    <div id="ytWidget"></div><script src="https://translate.yandex.net/website-widget/v1/widget.js?widgetId=ytWidget&pageLang=en&widgetTheme=light&autoMode=true" type="text/javascript"></script>
+</div>						<!-- Row start -->
+						<div class="row gutters">
+														<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+								<div class="card">
+									<div class="card-body">
+										<div class="stats-widget">
+											<div class="stats-widget-body">
+												<!-- Row start -->
+												<ul class="row no-gutters mb-3">
+													<li class="col-12">
+														<h6 class="title">Account Number</h6>
+														<h4 class="total">72126906007</h4>
+													</li>
+												</ul>
+												<!-- Row end -->
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+								<div class="card">
+									<div class="card-body">
+										<div class="stats-widget">
+											<div class="stats-widget-body">
+												<!-- Row start -->
+												<ul class="row no-gutters mb-3">
+													<li class="col-12">
+														<h6 class="title">Current Balance</h6>
+														<h4 class="total">$ 436,000.00</h4>
+													</li>
+												</ul>
+												<!-- Row end -->
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+                        <!-- Row end -->
+                        
+                            
+                            <!-- Row start -->
+                            <div class="row gutters">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <nav class="nav nav-pills flex-column flex-sm-row">
+                                                <a class="flex-sm-fill text-sm-center nav-link " href="https://intrustcapitals.com/secure/transfer?type=internal">Internal Transfer</a>
+                                                <a class="flex-sm-fill text-sm-center nav-link active" href="https://intrustcapitals.com/secure/transfer?type=local">Local Transfers</a>
+                                                <a class="flex-sm-fill text-sm-center nav-link " href="https://intrustcapitals.com/secure/transfer?type=international">International Transfer</a>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row gutters">
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                    <div class="card">
+                                        <div class="card-header">Initiate Transfer</div>
+                                        <div class="card-body">
+                                            <form method="POST" action="https://intrustcapitals.com/secure/transfer/new">
+                                                <input type="hidden" name="_token" value="HjmhILMaMAMV2NLnqrTdu1sah83Oh6jVCHySaMPk">                                                <style type="text/css">
+                                                    .invalid-feedback {
+                                                        display: unset;
+                                                        margin-top: .25rem;
+                                                        font-size: .875rem;
+                                                        color: #dc3545;
+                                                    }
+                                                </style>
+                                                <input value="local" name="type" hidden/>
+                                                <div class="form-row">
+                                                                                                        <div class="form-group col-md-12">
+                                                        <label for="AccountName" class="col-form-label">Account Name</label>
+                                                        <input type="text" class="form-control" placeholder="Account Name" id="AccountName" name="account_name" value="" required>
+                                                                                                            </div>
+                                                                                                        <div class="form-group col-md-12">
+                                                        <label for="AccountNumber" class="col-form-label">Account Number</label>
+                                                        <input type="text" class="form-control" placeholder="Account Number" id="AccountNumber" name="account_number" value="" required>
+                                                                                                            </div>
+                                                    
+                                                                                                            <div class="form-group col-md-12">
+                                                            <label for="BankName" class="col-form-label">Bank Name</label>
+                                                                                                                            <select class="form-control" name="bank_name" required>
+                                                                                                                                            <option value="ABN AMRO">ABN AMRO</option>
+                                                                                                                                            <option value="Allahabad Bank">Allahabad Bank</option>
+                                                                                                                                            <option value="Allen &amp; Company">Allen &amp; Company</option>
+                                                                                                                                            <option value="Bank of America Merrill Lynch (BAML)">Bank of America Merrill Lynch (BAML)</option>
+                                                                                                                                            <option value="Barclays Capital">Barclays Capital</option>
+                                                                                                                                            <option value="BB&amp;T">BB&amp;T</option>
+                                                                                                                                            <option value="BBY Ltd.">BBY Ltd.</option>
+                                                                                                                                            <option value="Berkery, Noyes &amp; Co.">Berkery, Noyes &amp; Co.</option>
+                                                                                                                                            <option value="BG Capital">BG Capital</option>
+                                                                                                                                            <option value="Blackstone">Blackstone</option>
+                                                                                                                                            <option value="BMO Capital Markets">BMO Capital Markets</option>
+                                                                                                                                            <option value="BNP Paribas">BNP Paribas</option>
+                                                                                                                                            <option value="Cantor Fitzgerald">Cantor Fitzgerald</option>
+                                                                                                                                            <option value="Capstone Partners">Capstone Partners</option>
+                                                                                                                                            <option value="Centerview Partners">Centerview Partners</option>
+                                                                                                                                            <option value="China International Capital Corporation">China International Capital Corporation</option>
+                                                                                                                                            <option value="CIBC World Markets">CIBC World Markets</option>
+                                                                                                                                            <option value="Citi">Citi</option>
+                                                                                                                                            <option value="CITIC Securities International">CITIC Securities International</option>
+                                                                                                                                            <option value="CLSA">CLSA</option>
+                                                                                                                                            <option value="Commerzbank">Commerzbank</option>
+                                                                                                                                            <option value="Corporate Finance Associates">Corporate Finance Associates</option>
+                                                                                                                                            <option value="Cowen">Cowen</option>
+                                                                                                                                            <option value="Credit Agricole CIB">Credit Agricole CIB</option>
+                                                                                                                                            <option value="Credit Suisse">Credit Suisse</option>
+                                                                                                                                            <option value="CSG Partners">CSG Partners</option>
+                                                                                                                                            <option value="Daewoo Securities">Daewoo Securities</option>
+                                                                                                                                            <option value="Deutsche Bank">Deutsche Bank</option>
+                                                                                                                                            <option value="Duff &amp; Phelps">Duff &amp; Phelps</option>
+                                                                                                                                            <option value="Europa Partners">Europa Partners</option>
+                                                                                                                                            <option value="Evercore Partners">Evercore Partners</option>
+                                                                                                                                            <option value="Financo">Financo</option>
+                                                                                                                                            <option value="Gleacher &amp; Company">Gleacher &amp; Company</option>
+                                                                                                                                            <option value="Goldman Sachs">Goldman Sachs</option>
+                                                                                                                                            <option value="Greenhill &amp; Co.">Greenhill &amp; Co.</option>
+                                                                                                                                            <option value="Guggenheim Partners">Guggenheim Partners</option>
+                                                                                                                                            <option value="Guosen Partners">Guosen Partners</option>
+                                                                                                                                            <option value="Houlihan Lokey">Houlihan Lokey</option>
+                                                                                                                                            <option value="HSBC Holdings PLC">HSBC Holdings PLC</option>
+                                                                                                                                            <option value="Imperial Capital">Imperial Capital</option>
+                                                                                                                                            <option value="ICBC (China)">ICBC (China)</option>
+                                                                                                                                            <option value="ICICI Bank">ICICI Bank</option>
+                                                                                                                                            <option value="Indian Bank">Indian Bank</option>
+                                                                                                                                            <option value="J.P. Morgan">J.P. Morgan</option>
+                                                                                                                                            <option value="Jefferies &amp; Co.">Jefferies &amp; Co.</option>
+                                                                                                                                            <option value="Keefe, Bruyette, &amp; Woods">Keefe, Bruyette, &amp; Woods</option>
+                                                                                                                                            <option value="KeyCorp (KeyBanc Capital Markets)">KeyCorp (KeyBanc Capital Markets)</option>
+                                                                                                                                            <option value="Ladenburg Thalmann">Ladenburg Thalmann</option>
+                                                                                                                                            <option value="Lancaster Pollard">Lancaster Pollard</option>
+                                                                                                                                            <option value="Lazard">Lazard</option>
+                                                                                                                                            <option value="Lincoln International">Lincoln International</option>
+                                                                                                                                            <option value="Macquarie Group">Macquarie Group</option>
+                                                                                                                                            <option value="Maple Capital Advisors">Maple Capital Advisors</option>
+                                                                                                                                            <option value="Marathon Capital">Marathon Capital</option>
+                                                                                                                                            <option value="McColl Partners">McColl Partners</option>
+                                                                                                                                            <option value="Mediobanca">Mediobanca</option>
+                                                                                                                                            <option value="Miller Buckfire &amp; Co.">Miller Buckfire &amp; Co.</option>
+                                                                                                                                            <option value="Mitsubishi UFJ Financial Group">Mitsubishi UFJ Financial Group</option>
+                                                                                                                                            <option value="Mizuho Financial Group">Mizuho Financial Group</option>
+                                                                                                                                            <option value="Moelis &amp; Company">Moelis &amp; Company</option>
+                                                                                                                                            <option value="Montgomery  &amp; Co.">Montgomery  &amp; Co.</option>
+                                                                                                                                            <option value="Morgan Keegan &amp; Co.">Morgan Keegan &amp; Co.</option>
+                                                                                                                                            <option value="Morgan Stanley">Morgan Stanley</option>
+                                                                                                                                            <option value="Needham &amp; Co.">Needham &amp; Co.</option>
+                                                                                                                                            <option value="NBF (National Bank Financial)">NBF (National Bank Financial)</option>
+                                                                                                                                            <option value="Nomura Holdings">Nomura Holdings</option>
+                                                                                                                                            <option value="Oppenheimer &amp; Co.">Oppenheimer &amp; Co.</option>
+                                                                                                                                            <option value="Panmure Gordon">Panmure Gordon</option>
+                                                                                                                                            <option value="Perella Weinberg Partners">Perella Weinberg Partners</option>
+                                                                                                                                            <option value="Piper Jaffray">Piper Jaffray</option>
+                                                                                                                                            <option value="PNC Financial Services (Harris Williams &amp; Co.">PNC Financial Services (Harris Williams &amp; Co.</option>
+                                                                                                                                            <option value="Punjab National Bank">Punjab National Bank</option>
+                                                                                                                                            <option value="Raymond James">Raymond James</option>
+                                                                                                                                            <option value="RBC Capital Markets">RBC Capital Markets</option>
+                                                                                                                                            <option value="RBS">RBS</option>
+                                                                                                                                            <option value="Robert W. Baird">Robert W. Baird</option>
+                                                                                                                                            <option value="Roth Capital Partners">Roth Capital Partners</option>
+                                                                                                                                            <option value="Rothschild">Rothschild</option>
+                                                                                                                                            <option value="Sagent Advisors">Sagent Advisors</option>
+                                                                                                                                            <option value="Sandler O’Neill Partners">Sandler O’Neill Partners</option>
+                                                                                                                                            <option value="SBI Capital Markets (State Bank of India)">SBI Capital Markets (State Bank of India)</option>
+                                                                                                                                            <option value="Scotiabank">Scotiabank</option>
+                                                                                                                                            <option value="Societe Generale">Societe Generale</option>
+                                                                                                                                            <option value="Sonenshine Partners">Sonenshine Partners</option>
+                                                                                                                                            <option value="Stephens, Inc.">Stephens, Inc.</option>
+                                                                                                                                            <option value="Stifel Financial">Stifel Financial</option>
+                                                                                                                                            <option value="Sucsy, Fischer &amp; Company">Sucsy, Fischer &amp; Company</option>
+                                                                                                                                            <option value="Sumitomo Mitsui Financial Group">Sumitomo Mitsui Financial Group</option>
+                                                                                                                                            <option value="SunTrust (Robinson Humphrey)">SunTrust (Robinson Humphrey)</option>
+                                                                                                                                            <option value="Syndicate Bank">Syndicate Bank</option>
+                                                                                                                                            <option value="TD Securities">TD Securities</option>
+                                                                                                                                            <option value="United bank of India">United bank of India</option>
+                                                                                                                                            <option value="UBS">UBS</option>
+                                                                                                                                            <option value="Vermillion Partners">Vermillion Partners</option>
+                                                                                                                                            <option value="Vijaya Bank">Vijaya Bank</option>
+                                                                                                                                            <option value="Wedbush Securities">Wedbush Securities</option>
+                                                                                                                                            <option value="Wells Fargo &amp; Co.">Wells Fargo &amp; Co.</option>
+                                                                                                                                            <option value="William Blair &amp; Company">William Blair &amp; Company</option>
+                                                                                                                                            <option value="WR Hambrecht &amp; Co.">WR Hambrecht &amp; Co.</option>
+                                                                                                                                            <option value="Yes Bank">Yes Bank</option>
+                                                                                                                                            <option value="Industrial &amp; Commercial Bank of China">Industrial &amp; Commercial Bank of China</option>
+                                                                                                                                            <option value="China Construction Bank Corp">China Construction Bank Corp</option>
+                                                                                                                                            <option value="Agricultural Bank of China">Agricultural Bank of China</option>
+                                                                                                                                            <option value="Bank of China">Bank of China</option>
+                                                                                                                                            <option value="Mitsubishi UFJ Financial Group">Mitsubishi UFJ Financial Group</option>
+                                                                                                                                            <option value="JPMorgan Chase &amp; Co">JPMorgan Chase &amp; Co</option>
+                                                                                                                                            <option value="HSBC Holdings">HSBC Holdings</option>
+                                                                                                                                            <option value="BNP Paribas">BNP Paribas</option>
+                                                                                                                                            <option value="Bank of America">Bank of America</option>
+                                                                                                                                            <option value="China Development Bank">China Development Bank</option>
+                                                                                                                                            <option value="Credit Agricole Group">Credit Agricole Group</option>
+                                                                                                                                            <option value="Wells Fargo">Wells Fargo</option>
+                                                                                                                                            <option value="Japan Post Bank">Japan Post Bank</option>
+                                                                                                                                            <option value="Mizuho Financial Group">Mizuho Financial Group</option>
+                                                                                                                                            <option value="Sumitomo Mitsui Financial Group">Sumitomo Mitsui Financial Group</option>
+                                                                                                                                            <option value="Citigroup Inc">Citigroup Inc</option>
+                                                                                                                                            <option value="Deutsche Bank">Deutsche Bank</option>
+                                                                                                                                            <option value="Banco Santander">Banco Santander</option>
+                                                                                                                                            <option value="Barclays PLC">Barclays PLC</option>
+                                                                                                                                            <option value="Societe Generale">Societe Generale</option>
+                                                                                                                                            <option value="Groupe BPCE">Groupe BPCE</option>
+                                                                                                                                            <option value="Bank of Communications">Bank of Communications</option>
+                                                                                                                                            <option value="Postal Savings Bank of China">Postal Savings Bank of China</option>
+                                                                                                                                            <option value="Lloyds Banking Group">Lloyds Banking Group</option>
+                                                                                                                                            <option value="Royal Bank of Canada">Royal Bank of Canada</option>
+                                                                                                                                            <option value="ING Groep NV">ING Groep NV</option>
+                                                                                                                                            <option value="Toronto-Dominion Bank">Toronto-Dominion Bank</option>
+                                                                                                                                            <option value="Norinchukin Bank">Norinchukin Bank</option>
+                                                                                                                                            <option value="UniCredit S.p.A.">UniCredit S.p.A.</option>
+                                                                                                                                            <option value="Royal Bank of Scotland Group">Royal Bank of Scotland Group</option>
+                                                                                                                                            <option value="Industrial Bank Co. Ltd">Industrial Bank Co. Ltd</option>
+                                                                                                                                            <option value="China Merchants Bank">China Merchants Bank</option>
+                                                                                                                                            <option value="Intesa Sanpaolo">Intesa Sanpaolo</option>
+                                                                                                                                            <option value="Credit Mutuel">Credit Mutuel</option>
+                                                                                                                                            <option value="UBS Group AG">UBS Group AG</option>
+                                                                                                                                            <option value="Shanghai Pudong Development Bank">Shanghai Pudong Development Bank</option>
+                                                                                                                                            <option value="Goldman Sachs Group">Goldman Sachs Group</option>
+                                                                                                                                            <option value="Agricultural Development Bank of China">Agricultural Development Bank of China</option>
+                                                                                                                                            <option value="China Minsheng Banking Corp">China Minsheng Banking Corp</option>
+                                                                                                                                            <option value="Morgan Stanley">Morgan Stanley</option>
+                                                                                                                                            <option value="China CITIC Bank Corp">China CITIC Bank Corp</option>
+                                                                                                                                            <option value="BBVA">BBVA</option>
+                                                                                                                                            <option value="Credit Suisse Group">Credit Suisse Group</option>
+                                                                                                                                            <option value="Bank of Nova Scotia">Bank of Nova Scotia</option>
+                                                                                                                                            <option value="Commonwealth Bank of Australia">Commonwealth Bank of Australia</option>
+                                                                                                                                            <option value="Rabobank Group">Rabobank Group</option>
+                                                                                                                                            <option value="Australia &amp; New Zealand Banking Group">Australia &amp; New Zealand Banking Group</option>
+                                                                                                                                            <option value="Nordea">Nordea</option>
+                                                                                                                                            <option value="European Investment Bank">European Investment Bank</option>
+                                                                                                                                            <option value="Westpac Banking Corp">Westpac Banking Corp</option>
+                                                                                                                                            <option value="Standard Chartered Plc">Standard Chartered Plc</option>
+                                                                                                                                            <option value="National Australia Bank">National Australia Bank</option>
+                                                                                                                                            <option value="China Everbright Bank">China Everbright Bank</option>
+                                                                                                                                            <option value="DZ Bank AG">DZ Bank AG</option>
+                                                                                                                                            <option value="Bank of Montreal">Bank of Montreal</option>
+                                                                                                                                            <option value="Sumitomo Mitsui Trust Holdings">Sumitomo Mitsui Trust Holdings</option>
+                                                                                                                                            <option value="Danske Bank">Danske Bank</option>
+                                                                                                                                            <option value="KfW Group">KfW Group</option>
+                                                                                                                                            <option value="Commerzbank">Commerzbank</option>
+                                                                                                                                            <option value="State Bank of India">State Bank of India</option>
+                                                                                                                                            <option value="Cassa Depositi e Prestiti (CDP)">Cassa Depositi e Prestiti (CDP)</option>
+                                                                                                                                            <option value="The Export-Import Bank of China (Eximbank)">The Export-Import Bank of China (Eximbank)</option>
+                                                                                                                                            <option value="Canadian Imperial Bank of Commerce">Canadian Imperial Bank of Commerce</option>
+                                                                                                                                            <option value="Ping An Bank">Ping An Bank</option>
+                                                                                                                                            <option value="ABN AMRO Group NV">ABN AMRO Group NV</option>
+                                                                                                                                            <option value="Sberbank of Russia">Sberbank of Russia</option>
+                                                                                                                                            <option value="U.S. Bancorp">U.S. Bancorp</option>
+                                                                                                                                            <option value="CaixaBank">CaixaBank</option>
+                                                                                                                                            <option value="Itau Unibanco Holding SA">Itau Unibanco Holding SA</option>
+                                                                                                                                            <option value="Resona Holdings">Resona Holdings</option>
+                                                                                                                                            <option value="Banco do Brasil SA">Banco do Brasil SA</option>
+                                                                                                                                            <option value="KB Financial Group">KB Financial Group</option>
+                                                                                                                                            <option value="Shinhan Financial Group">Shinhan Financial Group</option>
+                                                                                                                                            <option value="Nomura Holdings">Nomura Holdings</option>
+                                                                                                                                            <option value="DBS Group Holdings">DBS Group Holdings</option>
+                                                                                                                                            <option value="Caixa Economica Federal">Caixa Economica Federal</option>
+                                                                                                                                            <option value="PNC Financial Services Group">PNC Financial Services Group</option>
+                                                                                                                                            <option value="Hua Xia Bank">Hua Xia Bank</option>
+                                                                                                                                            <option value="Bank of New York Mellon Corp">Bank of New York Mellon Corp</option>
+                                                                                                                                            <option value="Shinkin Central Bank (SCB)">Shinkin Central Bank (SCB)</option>
+                                                                                                                                            <option value="Capital One Financial Corporation">Capital One Financial Corporation</option>
+                                                                                                                                            <option value="Banco Bradesco SA">Banco Bradesco SA</option>
+                                                                                                                                            <option value="KBC Group NV">KBC Group NV</option>
+                                                                                                                                            <option value="Bank of Beijing">Bank of Beijing</option>
+                                                                                                                                            <option value="Oversea-Chinese Banking Corp (OCBC)">Oversea-Chinese Banking Corp (OCBC)</option>
+                                                                                                                                            <option value="Hana Financial Group">Hana Financial Group</option>
+                                                                                                                                            <option value="Svenska Handelsbanken">Svenska Handelsbanken</option>
+                                                                                                                                            <option value="NongHyup Financial Group">NongHyup Financial Group</option>
+                                                                                                                                            <option value="Woori Bank">Woori Bank</option>
+                                                                                                                                            <option value="DnB ASA">DnB ASA</option>
+                                                                                                                                            <option value="China Guangfa Bank (CGB)">China Guangfa Bank (CGB)</option>
+                                                                                                                                            <option value="Skandinaviska Enskilda Banken">Skandinaviska Enskilda Banken</option>
+                                                                                                                                            <option value="Nationwide Building Society">Nationwide Building Society</option>
+                                                                                                                                            <option value="Cathay Financial Holding">Cathay Financial Holding</option>
+                                                                                                                                            <option value="Landesbank Baden-Wurttemberg">Landesbank Baden-Wurttemberg</option>
+                                                                                                                                            <option value="La Banque Postale">La Banque Postale</option>
+                                                                                                                                            <option value="Bank of Shanghai">Bank of Shanghai</option>
+                                                                                                                                            <option value="Swedbank">Swedbank</option>
+                                                                                                                                            <option value="United Overseas Bank (UOB)">United Overseas Bank (UOB)</option>
+                                                                                                                                            <option value="Bank of Jiangsu">Bank of Jiangsu</option>
+                                                                                                                                            <option value="Banco Sabadell">Banco Sabadell</option>
+                                                                                                                                            <option value="Bayerische Landesbank">Bayerische Landesbank</option>
+                                                                                                                                            <option value="Erste Group Bank AG">Erste Group Bank AG</option>
+                                                                                                                                            <option value="Brazilian Development Bank (BNDES)">Brazilian Development Bank (BNDES)</option>
+                                                                                                                                            <option value="Industrial Bank of Korea">Industrial Bank of Korea</option>
+                                                                                                                                            <option value="Bankia">Bankia</option>
+                                                                                                                                            <option value="Charles Schwab Corp">Charles Schwab Corp</option>
+                                                                                                                                            <option value="Dexia">Dexia</option>
+                                                                                                                                            <option value="State Street Corp">State Street Corp</option>
+                                                                                                                                            <option value="Raiffeisen Schweiz">Raiffeisen Schweiz</option>
+                                                                                                                                            <option value="Nykredit Group">Nykredit Group</option>
+                                                                                                                                            <option value="Fubon Financial Holding">Fubon Financial Holding</option>
+                                                                                                                                            <option value="VTB Bank">VTB Bank</option>
+                                                                                                                                            <option value="China ZheShang Bank (CZBank)">China ZheShang Bank (CZBank)</option>
+                                                                                                                                            <option value="BB&amp;T Corporation">BB&amp;T Corporation</option>
+                                                                                                                                            <option value="Qatar National Bank">Qatar National Bank</option>
+                                                                                                                                            <option value="National Bank of Canada">National Bank of Canada</option>
+                                                                                                                                            <option value="Suntrust Banks">Suntrust Banks</option>
+                                                                                                                                            <option value="Korea Development Bank">Korea Development Bank</option>
+                                                                                                                                            <option value="Belfius">Belfius</option>
+                                                                                                                                    </select>
+                                                                                                                                                                                </div>
+                                                                                                        <div class="form-group col-md-12">
+                                                                                                                    <input type="text" class="form-control" placeholder="Routing Number" id="SwiftCode" name="swift_code" value="00000000" required hidden>
+                                                                                                                                                                    </div>
+                                                    <div class="form-group col-md-12">
+                                                        
+                                                                                                                <input type="text" class="form-control" placeholder="Country" id="Country" name="country" value="United States" required hidden>
+                                                                                                                                                                    </div>
+
+
+                                                    
+
+                                                    <div class="form-group col-md-12">
+                                                        <label for="Amount" class="col-form-label">Amount <sup>(USD)</sup></label>
+                                                        <input type="number" class="form-control" id="Amount" placeholder="Amount In USD" name="amount"  value="" required>
+                                                                                                            </div>
+                                                </div>
+                                                <div class="alert alert-danger">
+                                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                        <span aria-hidden="true">×</span>
+                                                    </button><strong>Note: </strong> Kindly Review The Information Provided Above
+                                                </div>
+                                                <button type="submit" class="btn btn-primary">Send Transfer</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                        					</div>
+					<!-- END: .main-content -->
+				</div>
+				<!-- END: .app-main -->
+                                    <form id="logout-form" action="https://intrustcapitals.com/logout" method="POST" style="display: none;">
+                        <input type="hidden" name="_token" value="HjmhILMaMAMV2NLnqrTdu1sah83Oh6jVCHySaMPk">                    </form>
+                			</div>
+			<!-- END: .app-container -->
+			<!-- BEGIN .main-footer -->
+			
+			<footer class="main-footer fixed-btm">
+				Copyright Intrust Capitals 2022.
+			</footer>
+			<!-- END: .main-footer -->
+		</div>
+		<!-- END: .app-wrap -->
+
+		<!-- jQuery first, then Tether, then other JS. -->
+		<script src="{% static 'jquery.js' %}"></script>
+		<script src="{% static 'tether.min.js' %}"></script>
+		<script src="{% static 'bootstrap.min.js' %}"></script>
+		<script src="{% static 'unifyMenu.js' %}"></script>
+		<script src="{% static 'onoffcanvas.js' %}"></script>
+		<script src="{% static 'moment.js' %}"></script>
+
+		<!-- News ticker -->
+		<script src="{% static 'newsTicker.min.js' %}"></script>
+		<script src="{% static 'custom-newsTicker.js' %}"></script>
+
+		<!-- Slimscroll JS -->
+		<script src="{% static 'slimscroll.min.js' %}"></script>
+		<script src="{% static 'custom-scrollbar.js' %}"></script>
+
+		<!-- Chartist JS -->
+		<script src="{% static 'chartist.min.js' %}"></script>
+		<script src="{% static 'chartist-tooltip.js' %}"></script>
+
+		<!-- Common JS -->
+		<script src="{% static 'common.js' %}"></script>
+
+		<script type="text/javascript">
+</script>
+
+
+		
+	</body>
+</html>

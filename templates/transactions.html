@@ -1,0 +1,427 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Intrust Capitals - Online Banking Bank</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+
+    <!-- Common CSS -->
+    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'icomoon.css' %}" />
+    <link rel="stylesheet" href="{% static 'main.css' %}" />
+
+    <!-- Other CSS includes plugins - Cleanedup unnecessary CSS -->
+    <!-- Chartist css -->
+    <link href="{% static 'chartist.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'chartist-custom.css' %}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <style type="text/css">
+        .header-actions>li>a.user-settings img.avatar {
+            max-width: 40px;
+            max-height: 40px;
+            -webkit-border-radius: 20px;
+            -moz-border-radius: 20px;
+            border-radius: 20px;
+        }
+    </style>
+    <link href="{% static 'basictable.css' %}" rel="stylesheet" />
+
+    <style>
+        .app-side {
+            background: #002D72;
+        }
+        
+        .side-content .user-profile {
+            background: #ffbf3f;
+            color: #fff;
+        }
+        
+        .side-nav .unifyMenu a {
+            background: #01327c;
+            color: #a7b4c5;
+        }
+        
+        .side-nav .unifyMenu>li.selected>a {
+            color: #ffffff;
+            background: #ffbf3f;
+        }
+        
+        .app-header {
+            background: #002D72;
+        }
+        
+        .side-nav .unifyMenu>li {
+            background: #01327c;
+        }
+        
+        #yt-widget .yt-servicelink {
+            display: none !important;
+        }
+        
+        .side-nav .unifyMenu a {
+            color: #ffffff;
+        }
+        
+        .btn-primary {
+            background-color: #ffbf3f;
+            border-color: #ffbf3f;
+            color: #ffffff;
+        }
+        
+        .nav-pills .nav-link.active,
+        .show>.nav-pills .nav-link {
+            background-color: #ffbf3f;
+        }
+        
+        .nav-link.active:after {
+            background: #ffbf3f;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <!-- Loading starts -->
+
+    <!-- Loading ends -->
+
+    <!-- BEGIN .app-wrap -->
+    <div class="app-wrap">
+        <!-- BEGIN .app-heading -->
+        <header class="app-header">
+
+            <div class="container-fluid">
+                <div class="row ">
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-8 col-8">
+                        <div class="logo-block">
+                            <a href="#" class="logo">
+                                <img src="{% static 'custom/logo.png' %}" alt="" class="main-logo">
+
+                            </a>
+                            <a class="mini-nav-btn" href="#" id="app-side-mini-toggler">
+                                <i class="icon-th-menu"></i>
+                            </a>
+                            <a href="#app-side" data-toggle="onoffcanvas" class="onoffcanvas-toggler" aria-expanded="true">
+                                <i class="icon-th-menu"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-4 col-4">
+                        <ul class="header-actions">
+                            <li class="dropdown">
+                                <a href="#" id="userSettings" class="user-settings" data-toggle="dropdown" aria-haspopup="true">
+                                    <span class="user-name text-truncate">{{ user.first_name}} {{ user.last_name }}</span>
+
+                                    <img class="avatar" style="" src="{{ user.profile_picture.url }}" alt="User Thumb">
+                                    <i class="icon-chevron-small-down"></i>
+                                </a>
+                                <div class="dropdown-menu lg dropdown-menu-right" aria-labelledby="userSettings">
+                                    <ul class="user-settings-list">
+                                        <li>
+                                            <a href="{{ user.get_user_profile }}">
+                                                <div class="icon">
+                                                    <i class="icon-account_circle"></i>
+                                                </div>
+                                                <p>Account</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <div class="icon red">
+                                                    <i class="icon-credit-card"></i>
+                                                </div>
+                                                <p>Manage Card</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <div class="icon yellow">
+                                                    <i class="icon-schedule"></i>
+                                                </div>
+                                                <p>Transactions</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div class="logout-btn">
+                                        <a href="#" onclick="event.preventDefault();
+	                                            document.getElementById('logout-form').submit();" class="btn btn-primary">Logout
+	                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- END: .app-heading -->
+        <!-- BEGIN .app-container -->
+        <div class="app-container">
+            <!-- BEGIN .app-side -->
+            <aside class="app-side fixed" id="app-side">
+                <!-- BEGIN .side-content -->
+                <div class="side-content ">
+                    <!-- BEGIN .user-profile -->
+                    <div class="user-profile">
+                        <img src="{{ user.profile_picture.url }}" class="profile-thumb" alt="User Thumb">
+                        <h6 class="profile-name">{{ user.first_name}} {{ user.last_name }}</h6>
+                        <span class="user-name text-truncate">
+                                    <small>
+                                        <strong>
+                                            {{ account_number}}
+                                        </strong>
+                                    </small>
+                                </span>
+                        <br />
+                        <span class="user-name text-truncate">
+                                    <small>
+                                        <strong>
+                                            $ {{ user.account_balance }}
+                                        </strong>
+                                    </small>
+                                </span>
+                        <ul class="profile-actions">
+                            <li>
+                                <a href="{{ user.get_user_profile }}">
+                                    <i class="icon-account_circle"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" onclick="event.preventDefault();
+	                                            document.getElementById('logout-form').submit();">
+                                    <i class="icon-export" style="color: rgb(255, 60, 0)"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- END .user-profile -->
+                    <!-- BEGIN .side-nav -->
+                    <div class="sidebarNavScroll">
+                        <nav class="side-nav">
+                            <!-- BEGIN: side-nav-content -->
+                            <ul class="unifyMenu" id="unifyMenu">
+                                <li class="">
+                                    <a href="{{ user.get_user_profile }}">
+                                        <span class="has-icon">
+												<i class="icon-home"></i>
+											</span>
+                                        <span class="nav-title">Home</span>
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a href="{% url 'main:transfer' %}">
+                                        <span class="has-icon">
+												<i class="icon-swap"></i>
+											</span>
+                                        <span class="nav-title">Transfer</span>
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a href="#">
+                                        <span class="has-icon">
+												<i class="icon-credit-card"></i>
+											</span>
+                                        <span class="nav-title">Manage Card</span>
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a href="#">
+                                        <span class="has-icon">
+												<i class="fa fa-money"></i>
+											</span>
+                                        <span class="nav-title">Loan Application</span>
+                                    </a>
+                                </li>
+                                <li class="selected">
+                                    <a href="{{ user.get_history }}">
+                                        <span class="has-icon">
+												<i class="icon-watch_later"></i>
+											</span>
+                                        <span class="nav-title">Transactions</span>
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a href="#">
+                                        <span class="has-icon">
+												<i class="icon-user3"></i>
+											</span>
+                                        <span class="nav-title">Account</span>
+                                    </a>
+                                </li>
+                                <li>
+
+                                </li>
+
+                            </ul>
+                            <!-- END: side-nav-content -->
+                        </nav>
+                    </div>
+                    <!-- END: .side-nav -->
+                </div>
+                <!-- END: .side-content -->
+            </aside>
+            <!-- END: .app-side -->
+
+
+            <!-- BEGIN .app-main -->
+            <div class="app-main">
+                <!-- BEGIN .main-heading -->
+                <header class="main-heading">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                <div class="page-icon">
+                                    <i class="icon-watch_later"></i>
+                                </div>
+                                <div class="page-title">
+                                    <h5>Manage Transactions</h5>
+                                    <h6 class="sub-heading"><strong>{{ user.first_name }} {{ user.middle_name}} {{ user.last_name }} </strong></h6>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                <!-- Live updates start -->
+                                <ul class="updates" id="updates">
+                                    <li>
+                                        <a href="javascript:void(0)">
+                                            <i class="icon-drafts"></i>
+                                            <span>Your Current Balance Is $ {{ user.account_balance }}</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)">
+                                            <i class="icon-drafts"></i>
+                                            <span>Your Last Account Debit Was $ 10,000.00</span>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="javascript:void(0)">
+                                            <i class="icon-drafts"></i>
+                                            <span>Your Last Account Credit Was $ 1,000.00</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <!-- Live updates end -->
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <!-- END: .main-heading -->
+                <!-- BEGIN .main-content -->
+                <div class="main-content">
+
+                    <div class="">
+                        <div id="ytWidget"></div>
+                        <script src="https://translate.yandex.net/website-widget/v1/widget.js?widgetId=ytWidget&pageLang=en&widgetTheme=light&autoMode=true" type="text/javascript"></script>
+                    </div>
+                    <!-- Row start -->
+                    <div class="row gutters">
+
+                        <div class="col-12 mb-3">
+                            <button onclick="printDiv('StatementPrint')" class="btn btn-primary float-right">Print Statement </button>
+                            <a href="#" class="btn btn-primary float-left">Make Transfer </a>
+                        </div>
+
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12" id="StatementPrint">
+                            <div class="card">
+                                <div class="card-header">Recent Transactions</div>
+                                <div class="card-body">
+                                    <table class="table table-striped table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Type</th>
+                                                <th>Reference</th>
+                                                <th>Name</th>
+                                                <th>Amount ($)</th>
+                                                <th>Bank Name</th>
+                                                <th>Date</th>
+                                                <th>#Ref</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for trans in transactions %}
+                                            <tr>
+                                                <td class="text-danger">Debit</td>
+                                                <td>{{ trans.ref| truncatechars:22 }}</td>
+                                                <td>{{ trans.receiver }}</td>
+                                                <td>{{ trans.amount_tf }} </td>
+                                                <td>{{ trans.receiver.bank_name}}</td>
+                                                <td>{{ trans.date }}</td>
+                                                <td><a href="{{ trans.get_details }}" class="text-primary">Details</a></td>
+                                            </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- END: .main-content -->
+            </div>
+            <!-- END: .app-main -->
+            <form id="logout-form" action="#" method="POST" style="display: none;">
+                <input type="hidden" name="_token" value="HjmhILMaMAMV2NLnqrTdu1sah83Oh6jVCHySaMPk"> </form>
+        </div>
+        <!-- END: .app-container -->
+        <!-- BEGIN .main-footer -->
+
+        <footer class="main-footer fixed-btm">
+            Copyright Intrust Capitals 2022.
+        </footer>
+        <!-- END: .main-footer -->
+    </div>
+    <!-- END: .app-wrap -->
+
+    <!-- jQuery first, then Tether, then other JS. -->
+    <script src="{% static 'jquery.js' %}"></script>
+    <script src="{% static 'tether.min.js' %}"></script>
+    <script src="{% static 'bootstrap.min.js' %}"></script>
+    <script src="{% static 'unifyMenu.js' %}"></script>
+    <script src="{% static 'onoffcanvas.js' %}"></script>
+    <script src="{% static 'moment.js' %}"></script>
+
+    <!-- News ticker -->
+    <script src="{% static 'newsTicker.min.js' %}"></script>
+    <script src="{% static 'custom-newsTicker.js' %}"></script>
+
+    <!-- Slimscroll JS -->
+    <script src="{% static 'slimscroll.min.js' %}"></script>
+    <script src="{% static 'custom-scrollbar.js' %}"></script>
+
+    <!-- Chartist JS -->
+    <script src="{% static 'chartist.min.js' %}"></script>
+    <script src="{% static 'chartist-tooltip.js' %}"></script>
+
+    <!-- Common JS -->
+    <script src="{% static 'common.js' %}"></script>
+
+    <script src="{% static 'jquery.basictable.min.js' %}"></script>
+    <script type="text/javascript">
+        function printDiv(divName) {
+            var printContents = document.getElementById(divName).innerHTML;
+            var originalContents = document.body.innerHTML;
+            document.body.innerHTML = printContents;
+            window.print();
+            document.body.innerHTML = originalContents;
+        }
+        $(document).ready(function() {
+            $('.table').basictable({
+                breakpoint: 768,
+            });
+        });
+    </script>
+
+</body>
+
+</html>
